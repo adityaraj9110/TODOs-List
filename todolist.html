@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>ToDoList</title>
+    <style>
+        .loader{
+            background-color: red;
+            height: 2px;
+            animation: load .90s ease-in-out  1 forwards ;
+        }
+        @keyframes load {
+            0%{
+                width: 0;
+            }
+            50%{
+                width: 50vw;
+            }
+            100%{
+                width: 100vw;
+            }
+        }
+    </style>
+</head>
+
+<body style="background: aliceblue;">
+    <div class="loader">
+
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TODO List</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Items
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <h2 class="text-center" style="background-color: aqua;">TODOs List</h2>
+        <!-- <form> -->
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">Add An item To The List.</div>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="form-control" rows="3" id="description"></textarea>
+
+        </div>
+
+        <button type="submit" id="add" class="btn btn-primary my-4">Add to List</button>
+        <button type="submit" id="Refresh" class="btn btn-primary my-4">Click To Add More</button>
+        <!-- </form> -->
+        <div class="my-4" id="Items">
+            <h2>Your Items</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Serial No.</th>
+                        <th scope="col">Item title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Actions</th>
+
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Get Some Coffee</td>
+                        <td>You Need Coffee As You Are A Coder</td>
+                        <td><button class="btn btn-sm btn-primary">Delete</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4 " style="background: blanchedalmond;     padding-top: 1rem!important;
+padding-bottom: 3rem!important;">
+
+    <!-- Footer Elements -->
+    <div class="container">
+  
+      <!--Grid row-->
+      <div class="row">
+  
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+  
+          <!-- Form -->
+          <form class="form-inline">
+            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+              aria-label="Search">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </form>
+          <!-- Form -->
+  
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+  
+          <form class="input-group">
+            <input type="text" class="form-control form-control-sm" placeholder="Your email"
+              aria-label="Your email" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-sm btn-outline-white my-0" type="button" style="font-weight: bolder;">Sign up</button>
+            </div>
+          </form>
+  
+        </div>
+        <!--Grid column-->
+  
+      </div>
+      <!--Grid row-->
+  
+    </div>
+    <!-- Footer Elements -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="#"> adityasrivastav</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function getandupdate() {
+            console.log("Updating List........")
+            tit = document.getElementById('title').value;
+            disc = document.getElementById('description').value;
+            if (localStorage.getItem('itemjson') == null) {
+                itemjsonArray = [];
+                itemjsonArray.push([tit, disc]);
+                localStorage.setItem('itemjson', JSON.stringify(itemjsonArray));
+            }
+            else {
+                itemjsonArrayStr = localStorage.getItem('itemjson');
+                itemjsonArray = JSON.parse(itemjsonArrayStr);
+                itemjsonArray.push([tit, disc]);
+                localStorage.setItem('itemjson', JSON.stringify(itemjsonArray));
+                
+            }
+            update();
+        }
+        function update(){    
+            if (localStorage.getItem('itemjson') == null) {
+                itemjsonArray = [];
+                localStorage.setItem('itemjson', JSON.stringify(itemjsonArray));
+            }
+            else {
+                itemjsonArrayStr = localStorage.getItem('itemjson');
+                itemjsonArray = JSON.parse(itemjsonArrayStr);
+
+            }        
+            //populated table
+            let tablebody = document.getElementById('tablebody');
+            let str = "";
+            
+            itemjsonArray.forEach((element, index) => {
+
+                str += `
+                <tr>
+                    <th scope="row">${index+1}</th>
+                    <td>${element[0]}</td>
+                    <td>${element[1]}</td>
+                    <td><button  class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td>
+                  </tr>`
+            });
+                tablebody.innerHTML = str;
+            
+        }
+        add = document.getElementById("add")
+        add.addEventListener('click', getandupdate);
+        update();
+        function deleted(itemindex) {
+            console.log("delete",itemindex);
+            itemjsonArrayStr = localStorage.getItem('itemjson');
+            itemjsonArray = JSON.parse(itemjsonArrayStr)
+            //delete Itemindex element from array
+            itemjsonArray.splice(itemindex,1);
+            localStorage.setItem('itemjson', JSON.stringify(itemjsonArray));
+            update();
+            
+            
+        }
+        //for the page refresh
+        Refresh.addEventListener('click',function(){
+            let a=location.reload();
+            document.getElementById('Refresh').innerHTML=a;
+        })
+            
+
+        
+    </script>
+</body>
+
+</html>
